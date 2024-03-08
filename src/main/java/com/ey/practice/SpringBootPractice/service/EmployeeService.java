@@ -1,20 +1,19 @@
 package com.ey.practice.SpringBootPractice.service;
 
 import java.util.ArrayList;
-
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import com.ey.practice.SpringBootPractice.bean.EmployeeBean;
 import com.ey.practice.SpringBootPractice.model.EmployeeEntity;
 import com.ey.practice.SpringBootPractice.repository.EmployeeRepository;
-@Service
+@Component
 public class EmployeeService {
 	
-	
+
 	@Autowired
 	EmployeeRepository employeeRepository;
 	
