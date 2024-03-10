@@ -10,6 +10,7 @@ public class EmployeeBean {
 	private String caste ;
 	private boolean isNative;
 	private boolean isEmpIdEven;
+	private int balance;
 	
 	
 	
@@ -17,7 +18,10 @@ public class EmployeeBean {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public EmployeeBean(int employeeid, String lastName, String firstName, String address, String city,String caste,boolean isEmpIdEven) {
+	
+	
+	public EmployeeBean(int employeeid, String lastName, String firstName, String address, String city, String caste,
+			boolean isNative, boolean isEmpIdEven, int balance) {
 		super();
 		this.employeeid = employeeid;
 		this.lastName = lastName;
@@ -25,10 +29,12 @@ public class EmployeeBean {
 		this.address = address;
 		this.city = city;
 		this.caste = caste;
-		this.isEmpIdEven=isEmpIdEven;
-		}
-	
-	
+		this.isNative = isNative;
+		this.isEmpIdEven = isEmpIdEven;
+		this.balance = balance;
+	}
+
+
 	public int getEmployeeid() {
 		return employeeid;
 	}
@@ -77,12 +83,20 @@ public class EmployeeBean {
 	public void setEmpIdEven(boolean isEmpIdEven) {
 		this.isEmpIdEven = isEmpIdEven;
 	}
+	
+	public int getBalance() {
+		return balance;
+	}
+	public void setBalance(int balance) {
+		this.balance = balance;
+	}
 	@Override
 	public String toString() {
 		return "EmployeeBean [employeeid=" + employeeid + ", lastName=" + lastName + ", firstName=" + firstName
 				+ ", address=" + address + ", city=" + city + ", caste=" + caste + ", isNative=" + isNative
-				+ ", isEmpIdEven=" + isEmpIdEven + "]";
+				+ ", isEmpIdEven=" + isEmpIdEven + ", balance=" + balance + "]";
 	}
+	
 	
 	
 	

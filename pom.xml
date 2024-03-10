@@ -11,7 +11,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.ey.practice</groupId>
-	<artifactId>GopiApp</artifactId>
+	<artifactId>springbootpractice</artifactId>
 	<version>0.0.3</version>
 	<packaging>war</packaging>
 	<name>springbootpractice</name>
@@ -65,18 +65,26 @@
 			<artifactId>spring-boot-starter-tomcat</artifactId>
 			<scope>provided</scope>
 		</dependency>
+
+		<!--<dependency>
+			<groupId>com.ey.practice</groupId>
+			<artifactId>emp-salary</artifactId>
+			<version>0.0.1</version>
+		</dependency>-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<includeSystemScope>true</includeSystemScope>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

@@ -2,6 +2,8 @@ package com.ey.practice.SpringBootPractice.controller;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -39,8 +41,9 @@ public class EmployeeController {
 		      tags = { "Employees", "get" })
 	@GetMapping(path="/getAllEmployees")
 	public List<EmployeeBean> getAllEmployee() {
+		
 		List<EmployeeBean> empList = employeeService.getAllEmployee();
-		return empList;
+				return empList;
 	}
 	
 	@Operation(
@@ -49,11 +52,11 @@ public class EmployeeController {
 		      tags = { "Employees", "get" })
 	  @ApiResponses({
 		    @ApiResponse(responseCode = "200", description = "Employee with ID not retrived  successfully.", content = { @Content(schema = @Schema(implementation = EmployeeBean.class), mediaType = "application/json") }),
-		    @ApiResponse(responseCode = "404", description = "The Employee with given Id was not found.", content = { @Content(schema = @Schema()) })
-		  })
+		    @ApiResponse(responseCode = "404", description = "The Employee with given Id was not found.", content = { @Content(schema = @Schema()) }),
+		    @ApiResponse(responseCode = "8", description = "Exception while calling to Jar Application.", content = { @Content(schema = @Schema()) })
+	  })
 	@GetMapping(path="/getEmployeeById")
 	public EmployeeBean getEmployeeById(@RequestParam(name="employeeId") int empId) {
-		System.out.println(empId);
 		EmployeeBean empById = employeeService.getEmployeeById(empId);
 		return empById;
 	}
