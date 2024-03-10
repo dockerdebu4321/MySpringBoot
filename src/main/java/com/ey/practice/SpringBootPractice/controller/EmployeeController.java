@@ -41,7 +41,6 @@ public class EmployeeController {
 		      tags = { "Employees", "get" })
 	@GetMapping(path="/getAllEmployees")
 	public List<EmployeeBean> getAllEmployee() {
-		
 		List<EmployeeBean> empList = employeeService.getAllEmployee();
 				return empList;
 	}
@@ -57,8 +56,8 @@ public class EmployeeController {
 	  })
 	@GetMapping(path="/getEmployeeById")
 	public EmployeeBean getEmployeeById(@RequestParam(name="employeeId") int empId) {
-		EmployeeBean empById = employeeService.getEmployeeById(empId);
-		return empById;
+		EmployeeBean emp = employeeService.getEmployeeById(empId);
+		return emp;
 	}
 
 //	http://localhost:8080/employee/updateEmployee?firstName=Debashis&lastName=Mishra&employeeID=100
